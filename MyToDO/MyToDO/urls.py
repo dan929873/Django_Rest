@@ -19,7 +19,7 @@ from rest_framework.routers import DefaultRouter
 from user.views import UserModelViewSet
 
 router = DefaultRouter()
-router.register('authors', UserModelViewSet)
+router.register('user', UserModelViewSet)
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
