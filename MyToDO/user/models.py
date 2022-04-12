@@ -1,10 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class User(models.Model):
-    username = models.CharField(max_length=64)
-    firstname = models.CharField(max_length=64)
-    lastname = models.CharField(max_length=64)
-    email = models.CharField(max_length=64, unique=True)
+class User(AbstractUser):
+    email = models.EmailField(('email address'), unique=True)
 
-# Create your models here.
+
