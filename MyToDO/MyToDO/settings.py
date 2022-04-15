@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!4ny*5c13-b=m%)2$)qcs)u43mo@*e6t*1@j$ov8brwdzp%f%(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'user',
+    'todo',
 ]
 
 
@@ -76,6 +77,16 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        # 'rest_framework.renderers.BrowsableAPIRenderer'
+    ]
+}
+
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append('rest_framework.renderers.BrowsableAPIRenderer')
 
 WSGI_APPLICATION = 'MyToDO.wsgi.application'
 
