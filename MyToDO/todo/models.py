@@ -16,3 +16,6 @@ class TODO(models.Model):
     user_created = models.OneToOneField(User, on_delete=models.CASCADE)
     activ = models.BooleanField()
 
+    def save(self, *args, **kwargs):
+        super(TODO, self).save(*args, **kwargs)
+

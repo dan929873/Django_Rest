@@ -40,4 +40,7 @@ class TODOModelViewSet(ModelViewSet):
 
     def perform_destroy(self, instance):
         instance.activ = False
+        instance.save()
+
+
 
