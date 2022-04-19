@@ -16,3 +16,4 @@ class TODO(models.Model):
     user_created = models.OneToOneField(User, on_delete=models.CASCADE)
     activ = models.BooleanField()
 
+
