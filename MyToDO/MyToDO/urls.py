@@ -22,7 +22,7 @@ from user.views import UserModelViewSet
 
 
 router = DefaultRouter()
-router.register('user', UserModelViewSet)
+router.register('users', UserModelViewSet)
 router.register('project', ProjectModelViewSet)
 router.register('todo', TODOModelViewSet)
 
