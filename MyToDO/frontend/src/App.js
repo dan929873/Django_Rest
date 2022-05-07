@@ -25,7 +25,8 @@ class App extends React.Component {
         this.state = {
             'users': [],
             'projects':[],
-            'todos':[]
+            'todos':[],
+            'token':''
         }
     }
     componentDidMount() {
@@ -62,19 +63,6 @@ class App extends React.Component {
 
     render(){
         return(
-//            <div className="App">
-//                <HashRouter>
-//                    <Route exact path='/' component={() => <UserList users={this.state.users} />} />
-//
-//                    <Route exact path='/Project' component={() => <ProjectList projects={this.state.projects} />} />
-//
-//                    <Route exact path='/TODO' component={() => <TODOList todos={this.state.todos} />} />
-//                </HashRouter>
-//
-////                <UserList users={this.state.users}/>
-////                <ProjectList projects={this.state.projects}/>
-////                <TODOList todos={this.state.todos}/>
-//            </div>
             <div>
                 <BrowserRouter>
                     <nav>
