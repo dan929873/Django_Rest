@@ -1,3 +1,4 @@
+import {useParams} from 'react-router-dom'
 import React from 'react'
 
 const ProjectItem = ({project}) => {
@@ -12,6 +13,7 @@ const ProjectItem = ({project}) => {
 
 
 const ProjectList = ({projects}) => {
+
     return(
         <table>
         <th>
