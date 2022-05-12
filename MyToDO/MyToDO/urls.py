@@ -17,10 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
-
+from drf_yasg.views import get_schema_view
+from drf_yasg.openapi import Info, Contact, License
 from todo.views import ProjectModelViewSet, TODOModelViewSet
 from user.views import UserModelViewSet
 
+schema_view = get_schema_view(
+    Info(
+        title='Library',
+        default_version='1.0',
+        description='description',
+        contact=Contact(email='test@test.com'),
+        license=License(name='MIT')
+    ),
+    public=True,
+)
 
 router = DefaultRouter()
 router.register('users', UserModelViewSet)
@@ -32,5 +43,5 @@ urlpatterns = [
     path('api-auth-token/', views.obtain_auth_token),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-
+    path('swagger/', schema_view.with_ui()),
 ]
