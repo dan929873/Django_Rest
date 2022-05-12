@@ -6,3 +6,8 @@ class UserModelSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+class UserModelSerializerV2(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
