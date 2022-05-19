@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 from drf_yasg.views import get_schema_view
@@ -44,4 +46,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('swagger/', schema_view.with_ui()),
+    path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]
